@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherJKL.Views.OpenWeathersPage"
+             Title="Open Weathers">
+
+    <StackLayout Margin="10">
+        <Label Text="Enter city name:" />
+        <Entry x:Name="cityEntry" Placeholder="e.g. London" />
+        <Button Text="Search" Clicked="OnSearchButtonClicked" />
+        <StackLayout x:Name="resultLayout" IsVisible="False" Margin="10">
+            <Label Text="{Binding City}" FontAttributes="Bold" />
+            <Label Text="{Binding Temperature}" />
+            <Label Text="{Binding WeatherDescription}" />
+            <Label Text="{Binding Humidity}" />
+            <Label Text="{Binding WindSpeed}" />
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

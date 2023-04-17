@@ -48,4 +48,24 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Include="ApplicationServices\ApplicationServices.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Nancy" Version="2.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\WeatherForecast.xaml.cs">
+	    <DependentUpon>WeatherForecast.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\WeatherForecast.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>
