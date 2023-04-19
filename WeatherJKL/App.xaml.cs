@@ -1,4 +1,5 @@
 ﻿using WeatherJKL.ApplicationServices.Services;
+using WeatherJKL.Core.ServiceInterface;
 
 #if WINDOWS
 using Microsoft.UI;
@@ -30,6 +31,6 @@ public partial class App : Application
         });
 #endif
 
-        MainPage = new NavigationPage(new WeatherForecastsPage(new WeatherForecastsServices()));
+        MainPage = new NavigationPage(new WeatherSearchPage(new WeatherForecastsServices()));
     }
 }

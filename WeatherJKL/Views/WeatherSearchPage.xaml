@@ -14,40 +14,48 @@
                    TextColor="#555555"
                    CancelButtonColor="#555555"
                    SearchButtonPressed="OnSearchButtonPressed" />
-        <CollectionView x:Name="citiesCollectionView"
-                        Grid.Row="1"
-                        SelectionMode="Single"
-                        ItemsSource="{Binding Cities}"
-                        VerticalOptions="FillAndExpand">
-            <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Vertical"
-                                 Span="2" />
-            </CollectionView.ItemsLayout>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Padding="10"
-                          BackgroundColor="White"
-                          RowDefinitions="Auto, Auto, Auto"
-                          ColumnDefinitions="Auto, *" >
-                        <Label Text="{Binding Name}"
-                               TextColor="#555555"
-                               FontAttributes="Bold"
-                               FontSize="Large"
-                               Grid.Row="0"
-                               Grid.Column="1" />
-                        <Label Text="{Binding State}"
-                               TextColor="#555555"
-                               FontSize="Medium"
-                               Grid.Row="1"
-                               Grid.Column="1" />
-                        <Label Text="{Binding Country}"
-                               TextColor="#555555"
-                               FontSize="Medium"
-                               Grid.Row="2"
-                               Grid.Column="1" />
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        <ScrollView Grid.Row="1">
+            <StackLayout x:Name="resultLayout"
+                         VerticalOptions="FillAndExpand">
+                <StackLayout.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="Label">
+                            <Setter Property="TextColor" Value="#555555" />
+                            <Setter Property="FontSize" Value="Medium" />
+                        </Style>
+                        <Style TargetType="Label" x:Key="boldLabel">
+                            <Setter Property="TextColor" Value="#555555" />
+                            <Setter Property="FontSize" Value="Large" />
+                            <Setter Property="FontAttributes" Value="Bold" />
+                        </Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Padding" Value="10" />
+                            <Setter Property="BackgroundColor" Value="White" />
+                            <Setter Property="ColumnDefinitions">
+                                <Setter.Value>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </ColumnDefinitionCollection>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="RowDefinitions">
+                                <Setter.Value>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ResourceDictionary>
+                </StackLayout.Resources>
+                <Label Text="City Results"
+                       Style="{StaticResource boldLabel}" />
+                <Entry x:Name="cityEntry" Placeholder="e.g. London" />
+                <StackLayout x:Name="cityLayout" />
+            </StackLayout>
+        </ScrollView>
     </Grid>
 </ContentPage>

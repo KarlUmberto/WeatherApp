@@ -3,7 +3,7 @@ using Nancy.Json;
 using System.Net;
 using WeatherJKL.Core.Dto.WeatherDtos;
 using WeatherJKL.Core.ServiceInterface;
-using WeatherJKL.Core.Dto.WeatherDtos;
+
 
 namespace WeatherJKL.ApplicationServices.Services
 {
