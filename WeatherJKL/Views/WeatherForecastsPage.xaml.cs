@@ -4,17 +4,16 @@ using WeatherJKL.Models.Weather;
 using WeatherJKL.ApplicationServices.Services;
 using WeatherJKL.Core.ServiceInterface;
 
-namespace WeatherJKL.Views
+namespace Views
 {
-    public partial class OpenWeathersPage : ContentPage
+    public partial class WeatherForecastsPage : ContentPage
     {
-        private readonly OpenWeatherResultDto _openWeatherService;
+        private readonly IWeatherForecastsServices _weatherForecastsServices;
 
-        public OpenWeathersPage(OpenWeatherResultDto openWeatherResult)
+        public WeatherForecastsPage(IWeatherForecastsServices weatherForecastsServices)
         {
             InitializeComponent();
-
-            _openWeatherService = openWeatherResult;
+            _weatherForecastsServices = weatherForecastsServices;
         }
 
         private async void OnSearchButtonClicked(object sender, EventArgs e)
@@ -23,7 +22,7 @@ namespace WeatherJKL.Views
 
             if (!string.IsNullOrEmpty(city))
             {
-                OpenWeatherResultDto weatherResult = await _openWeatherService.GetWeatherAsync(city);
+                OpenWeatherResultDto weatherResult = await _weatherForecastsServices.OpenWeatherResult(new OpenWeatherResultDto { City = city });
 
                 if (weatherResult != null)
                 {
