@@ -59,16 +59,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\WeatherForecastsPage.xaml.cs">
-	    <DependentUpon>WeatherForecastsPage.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiXaml Update="Views\WeatherForecastPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\WeatherForecastsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
