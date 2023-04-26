@@ -1,4 +1,7 @@
-﻿namespace WeatherJKL;
+﻿using WeatherJKL.ApplicationServices.Services;
+using WeatherJKL.Core.ServiceInterface;
+
+namespace WeatherJKL;
 
 public partial class MainPage : ContentPage
 {
@@ -10,8 +13,8 @@ public partial class MainPage : ContentPage
 	}
 
     private async void OnSearchClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new WeatherSearchPage());
+	{
+        await Navigation.PushAsync(new WeatherSearchPage(new WeatherForecastsServices()));
     }
 }
 
