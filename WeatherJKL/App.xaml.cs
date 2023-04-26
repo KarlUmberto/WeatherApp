@@ -30,6 +30,8 @@ public partial class App : Application
         });
 #endif
 
-        MainPage = new NavigationPage(new WeatherForecastsPage(new WeatherForecastsServices()));
+        MainPage mainPage = new MainPage();
+        NavigationPage navigationPage = new NavigationPage(mainPage);
+        App.Current.MainPage = navigationPage;
     }
 }
