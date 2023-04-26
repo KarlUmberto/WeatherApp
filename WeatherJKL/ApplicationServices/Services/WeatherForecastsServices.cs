@@ -60,7 +60,7 @@ namespace WeatherJKL.ApplicationServices.Services
 
         public async Task<OpenWeatherResultDto> OpenWeatherResult(OpenWeatherResultDto dto)
         {
-            string IDOWeather = "yourPassword";
+            string IDOWeather = "96807c0630b3f3a71ae96e9d011d2030";
             var url = $"https://api.openweathermap.org/data/2.5/weather?q={dto.City}&units=metric&APPID={IDOWeather}";
 
             using (WebClient client = new WebClient())

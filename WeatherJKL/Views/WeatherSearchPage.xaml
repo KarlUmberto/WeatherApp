@@ -8,12 +8,16 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <SearchBar Grid.Row="0"
-                   Placeholder="Search for a city"
+        <StackLayout Grid.Row="0">
+            <Entry x:Name="cityEntry"
+                   Placeholder="Enter city name"
                    BackgroundColor="White"
-                   TextColor="#555555"
-                   CancelButtonColor="#555555"
-                   SearchButtonPressed="OnSearchButtonPressed" />
+                   TextColor="#555555" />
+            <Button Text="Search"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                    Clicked="OnSearchButtonPressed" />
+        </StackLayout>
         <ScrollView Grid.Row="1">
             <StackLayout x:Name="resultLayout"
                          VerticalOptions="FillAndExpand">
@@ -51,9 +55,6 @@
                         </Style>
                     </ResourceDictionary>
                 </StackLayout.Resources>
-                <Label Text="City Results"
-                       Style="{StaticResource boldLabel}" />
-                <Entry x:Name="cityEntry" Placeholder="e.g. London" />
                 <StackLayout x:Name="cityLayout" />
             </StackLayout>
         </ScrollView>
