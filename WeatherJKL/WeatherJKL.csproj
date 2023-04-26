@@ -50,6 +50,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\weather.png" />
+	  <None Remove="Resources\Images\weatherbackround.png" />
 	</ItemGroup>
 
 	<ItemGroup>
