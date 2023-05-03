@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="Views.WeatherForecastPage"
-             NavigationPage.HasNavigationBar="False">
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          mc:Ignorable="d"
+          x:Class="Views.WeatherForecastPage"
+          NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Margin="20">
+        <Grid>
+            <Image Source="background.jpg" Aspect="Fill" />
+            <StackLayout Margin="20" BackgroundColor="Transparent">
                 <Label Text="{Binding City}" FontSize="Title" />
                 <Label Text="{Binding Temperature}" FontSize="Large" />
                 <Label Text="{Binding Description}" FontSize="Medium" />
                 <Label Text="{Binding Humidity}" FontSize="Medium" />
                 <Label Text="{Binding WindSpeed}" FontSize="Medium" />
             </StackLayout>
-        </ScrollView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

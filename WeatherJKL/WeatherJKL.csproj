@@ -49,6 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\background.jpg" />
 	  <None Remove="Resources\Images\weather.png" />
 	  <None Remove="Resources\Images\weatherbackround.png" />
 	</ItemGroup>
